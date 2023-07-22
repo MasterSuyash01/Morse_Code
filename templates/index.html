@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Morse Code Translator</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1>Morse Code Translator</h1>
+                <form action="/" method="post">
+                    <div class="form-group">
+                        <label for="text">Enter Text or Morse Code:</label>
+                        <input type="text" class="form-control" name="text" id="text" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="choice" value="to_morse" required> Text to Morse Code
+                        <input type="radio" name="choice" value="to_text"> Morse Code to Text
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Translate">
+                    </div>
+                </form>
+                {% if result %}
+                <p>Result: {{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
