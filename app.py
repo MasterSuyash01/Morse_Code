@@ -28,7 +28,7 @@ def morse_to_text(morse_code):
             if morse == code:
                 text.append(char)
                 break
-    return ''.join(text)
+    return ' '.join(text)
 
 @app.route("/", methods=["GET", "POST"])
 def morse_code_translator():
